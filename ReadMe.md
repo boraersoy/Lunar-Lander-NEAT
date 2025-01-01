@@ -1,6 +1,6 @@
 # Lunar Lander with NEAT
 
-This project uses the NEAT algorithm to train a neural network to play the Lunar Lander game.
+This project uses the NEAT algorithm to train a neural network to play the Lunar Lander game. 
 
 ## Requirements
 - Python 3.8+
@@ -22,9 +22,6 @@ This project uses the NEAT algorithm to train a neural network to play the Lunar
 ## Usage
 1. Run the main script to start training:
    ```bash
-   python main.py
+   python lunaerlanderneat.py
    ```
-2. After training, visualize the winning genome:
-   ```bash
-   python main.py
-   ```
+

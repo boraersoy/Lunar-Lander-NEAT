@@ -12,7 +12,7 @@ This project uses the NEAT algorithm to train a neural network to play the Lunar
 ## Setup
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-repo/lunar-lander-neat.git
+   git clone https://github.com/boraersoy/Lunar-Lander-NEAT.git
    ```
 2. Install dependencies:
    ```bash
@@ -22,6 +22,6 @@ This project uses the NEAT algorithm to train a neural network to play the Lunar
 ## Usage
 1. Run the main script to start training:
    ```bash
-   python lunaerlanderneat.py
+   python lunarlanderneat.py
    ```
 

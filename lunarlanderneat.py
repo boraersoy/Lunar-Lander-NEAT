@@ -68,7 +68,7 @@ def run_neat():
     stats = neat.StatisticsReporter()
     population.add_reporter(stats)
 
-    winner = population.run(eval_genomes, 30)
+    winner = population.run(eval_genomes, 70)
     print("\nBest Genome:\n", winner)
     with open("1LunarLanderwinner.pkl", "wb") as f:
         pickle.dump(winner, f)
@@ -122,7 +122,6 @@ if __name__ == "__main__":
 
     visualize_winner(winner, config_path, config)
     draw_neural_network_graphviz(winner, config, filename="nn_lunar_lander")
-
 
 
 

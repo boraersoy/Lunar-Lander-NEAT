@@ -1,6 +1,7 @@
 import graphviz
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 def draw_neural_network_graphviz(winner, config, filename="neural_net"):
 
@@ -50,6 +51,7 @@ def plot_training_stats(stats, filename="training_stats.png"):
     plt.figure(figsize=(10, 6))
     plt.plot(generations, best_fitness, label="Best Fitness")
     plt.plot(generations, avg_fitness, label="Average Fitness")
+
     plt.fill_between(
         generations,
         [avg - std for avg, std in zip(avg_fitness, stdev_fitness)],
@@ -66,3 +68,24 @@ def plot_training_stats(stats, filename="training_stats.png"):
     plt.savefig(filename)
     plt.show()
 
+def report_statistics(results):
+    # Create a pandas DataFrame for the results
+    df = pd.DataFrame(results)
+    
+    # Save the results to a CSV file for later analysis
+    df.to_csv("fitness_statistics.csv", index=False)
+    
+    # Display the table
+    print(df)
+
+def plot_boxplot(results):
+    # Extract all fitness scores for the box plot
+    fitness_scores = [result['fitness_scores'] for result in results]
+    
+    plt.figure(figsize=(10, 6))
+    plt.boxplot(fitness_scores, labels=[f"Case {i+1}" for i in range(len(results))])
+    plt.title('Box-Plot of Fitness Scores for Each Case')
+    plt.xlabel('Parameter Set')
+    plt.ylabel('Fitness Score')
+    plt.grid(True)
+    plt.show()
